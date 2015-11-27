@@ -15,20 +15,32 @@ when logged in, you will have a create button on your personal page
 when logged in, you may have some extra buttons on the top bar
 
 ## Work Plan
-- [ ] basic setup
-  - [ ] basic dev environment
-  - [ ] basic planning
+- [x] basic setup
+  - [x] basic dev environment
+  - [x] basic planning
 - [ ] set up basic accounts
   - [ ] add packages for basic password accounts
+  - [ ] set up some seed data
+- [ ] set up basic collections
+  - [ ] posts
+  - [ ] augment user
+  - [ ] set up some basic tests
   - [ ] set up some seed data
 - [ ] structure application
   - [ ] use the package pattern for the app?
 - [ ] set up simple pages for testing output to screen
   - [ ] set up some basic e2e tests
   - [ ] plan the page templates - simple
-- [ ] set up basic collections
-  - [ ] posts
-  - [ ] augment user
-  - [ ] set up some basic tests
-  - [ ] set up some seed data
--
+- [ ] set up schemas
+  - tests?
+- [ ] recast collection documents as domain object class instances (try es2015)
+  - tests?
+- [ ] set up basic CRUD operations, attached to the domain objects
+  - tests?
+- [ ] security concerns for domain objects
+  - tests?
+- [ ] build working UI
+  - [ ] plan tempates for revision
+  - tests?
+- [ ] work on accounts and roles
+  - tests?
