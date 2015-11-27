@@ -35,6 +35,7 @@ Feature: Navigation for All Visitors
     When I navigate to "/robdooh"
     Then I should see the H2 heading "robdooh's Blog"
     And I should not see a button "Create Post"
+    And I should see a first post called "Why I Love Meteor"
 
 
   #@focus
