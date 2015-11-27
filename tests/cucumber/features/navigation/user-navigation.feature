@@ -1,6 +1,6 @@
 Feature: Navigation for Blog Owners
 
-  As a blog owner
+  As blog owner robdooh
   I want to visit my dashboard
   So that I can edit my posts
 
@@ -10,7 +10,10 @@ Feature: Navigation for Blog Owners
   Background:
     Given I am a blog owner
 
-  #@focus
+  @focus
   Scenario: Owner tries to visit a dashboard
-    When I navigate to "/dashboard"
-    Then I should see the H2 heading "Dashboard"
+    When I click on sign in link
+    And I enter my authentication information
+    Then I should be logged in
+    When I navigate to "/robdooh"
+    Then I should see the H3 heading "Dashboard"

@@ -9,9 +9,9 @@ Feature: Navigation for All Visitors
   # The background will be run for every scenario
   Background:
     Given I am a guest
-    
 
-  @focus
+
+  #@focus
   Scenario: Guest visits home page of the blog host
     When I navigate to "/"
     Then I should see the title "Company, Inc. Blog"
@@ -33,10 +33,10 @@ Feature: Navigation for All Visitors
   @focus
   Scenario: Guest tries to visit a specific blog
     When I navigate to "/robdooh"
-    Then I should see the H2 heading "Rob's Blog"
+    Then I should see the H2 heading "robdooh's Blog"
 
 
   @focus
   Scenario: Guest tries to visit a specific blog post
-    When I navigate to "/robdooh/introduction"
+    When I navigate to "/robdooh/why-i-love-meteor"
     Then I should see the H2 heading "Introduction"
