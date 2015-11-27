@@ -8,13 +8,21 @@
       // fixture code will only execute inside mirrors neither runs
       // inside the main app nor gets bundled to production.
     },
-    'addUser': function (opts) {
+    'addUsers': function () {
       Meteor.users.remove({});
+
       Accounts.createUser({
-        email: opts.email,
-        password: opts.password ? opts.password : "test",
-        username: opts.username,
-        _id: currentUserId
+        email: 'robdooh@company.com',
+        password: 'rob',
+        username: 'robdooh',
+        _id: 'asdfasdfasdfads'
+      });
+
+      Accounts.createUser({
+        email: 'joecamel@company.com',
+        password: 'joe',
+        username: 'joecamel',
+        _id: 'jgjgjhgjhghgkjh'
       });
     },
     'addPost': function () {
