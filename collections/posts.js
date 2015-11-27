@@ -11,7 +11,8 @@ Post = class Post {
 
 Posts = new Meteor.Collection('posts', {
   transform: function(document)  {
-    return new Post(document);
+    let newPost = new Post(document);
+    return newPost;
   }
 });
 // Probably force to server methods for interactions
@@ -39,7 +40,7 @@ PostsSchema = new SimpleSchema({
   }
 });
 
-Posts.attachSchema( PostsSchema );
+Posts.attachSchema( PostsSchema, {transform: true} );
 
 if(Meteor.isClient){
   // Allow

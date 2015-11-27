@@ -1,4 +1,3 @@
-
 // Users
 UsersSchema = new SimpleSchema({
   username: {

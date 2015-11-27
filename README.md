@@ -22,10 +22,10 @@ when logged in, you may have some extra buttons on the top bar
   - [x] add packages for basic password accounts
   - [x] add login buttons
   - [x] set up some seed data
-- [ ] set up basic collections
+- [x] set up basic collections
   - [x] posts
   - [x] augment user
-  - [ ] set up some basic tests
+  - [x] set up some basic tests
   - [x] set up some seed data
 - [ ] set up simple pages for testing output to screen
   - [ ] set up some basic e2e tests
