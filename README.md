@@ -23,7 +23,7 @@ when logged in, you may have some extra buttons on the top bar
   - [x] add login buttons
   - [x] set up some seed data
 - [ ] set up basic collections
-  - [ ] posts
+  - [x] posts
   - [ ] augment user
   - [ ] set up some basic tests
   - [ ] set up some seed data
