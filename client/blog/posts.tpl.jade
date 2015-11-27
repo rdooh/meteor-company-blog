@@ -1,3 +1,4 @@
-ul
-  li post 1
-  li post 2
+ul.post-title-links
+  each posts
+    li 
+      a(href="/{{title}}") #{title}
