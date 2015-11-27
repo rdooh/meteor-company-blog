@@ -8,7 +8,7 @@ Meteor.startup(function(){
     });
     Accounts.setPassword(rob, 'rob');
     Accounts.addEmail(rob, 'robdooh@company.com', true)
-    console.log('rob',Meteor.users.findOne(rob));
+    // console.log('rob',Meteor.users.findOne(rob));
 
 
     let joe = Accounts.createUser({
@@ -17,7 +17,7 @@ Meteor.startup(function(){
     });
     Accounts.setPassword(joe, 'joe');
     Accounts.addEmail(joe, 'joecamel@company.com', true)
-    console.log('joe',Meteor.users.findOne(joe));
+    // console.log('joe',Meteor.users.findOne(joe));
 
   }
 

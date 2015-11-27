@@ -43,8 +43,13 @@ module.exports = function () {
   });
 
   this.Then(/^I should see a first post called "([^"]*)"$/, function (postTitle) {
-    client.waitForExist('ul.post-title-links:nth-child(1)');
-    expect(client.getText('ul.post-title-links:nth-child(1) > a')).toEqual(postTitle);
+    client.waitForExist('ul.post-title-links');
+    expect(client.getText('ul.post-title-links > li > a')[0]).toEqual(postTitle);
+  });
+
+  this.Then(/^I should see the only post called "([^"]*)"$/, function (postTitle) {
+    client.waitForExist('ul.post-title-links');
+    expect(client.getText('ul.post-title-links > li > a')).toEqual(postTitle);
   });
 
 };

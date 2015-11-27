@@ -42,7 +42,7 @@ Feature: Navigation for All Visitors
     When I navigate to "/joecamel"
     Then I should see the H2 heading "joecamel's Blog"
     And I should not see a button "Create Post"
-    And I should see a first post called "Building a Blog"
+    And I should see the only post called "Building a Blog"
 
 
   #@focus

@@ -17,8 +17,8 @@ Router.route('/:blog', {
   name: 'blog',
   subscriptions: function() {
     // add the subscription to the waitlist
-    // this.subscribe('blog', this.params.blog);
-    // this.subscribe('posts');
+    this.subscribe('blog', this.params.blog).wait();
+    this.subscribe('posts').wait();
   },
   action: function () {
     let params = this.params;
