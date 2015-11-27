@@ -37,6 +37,13 @@ Feature: Navigation for All Visitors
     And I should not see a button "Create Post"
     And I should see a first post called "Why I Love Meteor"
 
+  @focus
+  Scenario: Guest tries to visit a second blog
+    When I navigate to "/joecamel"
+    Then I should see the H2 heading "joecamel's Blog"
+    And I should not see a button "Create Post"
+    And I should see a first post called "Building a Blog"
+
 
   #@focus
   Scenario: Guest tries to visit a specific blog post
