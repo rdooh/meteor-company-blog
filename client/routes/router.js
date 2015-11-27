@@ -26,11 +26,12 @@ Router.route('/:blog', {
     // look up the blog username
     let blogOwner = Meteor.users.findOne({username: blog});
     if (blogOwner) {
+      console.log(blogOwner,'tester')
       this.render('blog',{
         data: {
           blogOwner: blogOwner.username,
           posts: function(){
-            return Posts.find({ownerId:'asdfasdfasdfads'});
+            return Posts.find({ownerId:blogOwner._id});
           }
         }
       });
