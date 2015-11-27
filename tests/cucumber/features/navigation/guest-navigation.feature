@@ -19,7 +19,7 @@ Feature: Navigation for All Visitors
 
   # This scenario will not run as part of the Meteor dev cycle because it does not have the @focus
   # tag, but it will run on CI if you use `meteor --test` for instance
-  @focus
+  #@focus
   Scenario: Guest tries to visit a page that does not exist
     When I navigate to "/brokenlink"
     Then I should see the H2 heading "404"

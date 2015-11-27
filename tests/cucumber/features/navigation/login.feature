@@ -7,7 +7,7 @@ Feature: Allow blog owners to login and logout
   Background:
     Given I am on the home page
 
-  @focus
+  #@focus
   Scenario: A user can login with valid information
     When I click on sign in link
     And I enter my authentication information
