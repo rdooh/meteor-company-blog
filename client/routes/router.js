@@ -5,7 +5,11 @@ Router.configure({
 
 // Default home route
 Router.route('/', function () {
-  this.render('home');
+  this.render('home',{
+    data: {
+      blogs: Meteor.users.find({}, {fields: {username: 1}})
+    }
+  });
 });
 
 
