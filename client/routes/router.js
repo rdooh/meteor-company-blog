@@ -1,6 +1,8 @@
 Router.configure({
-  layoutTemplate: 'main'
+  layoutTemplate: 'main',
+  notFoundTemplate: 'notFound'
 });
+
 
 // Default home route
 Router.route('/', function () {
