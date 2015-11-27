@@ -42,5 +42,9 @@ module.exports = function () {
     expect(client.isExisting('button#create-new-post')).toEqual(false);
   });
 
+  this.Then(/^I should see a first post called "([^"]*)"$/, function (postTitle) {
+    client.waitForExist('ul.post-title-links:nth-child(1)');
+    expect(client.getText('ul.post-title-links:nth-child(1) > a')).toEqual(postTitle);
+  });
 
 };
