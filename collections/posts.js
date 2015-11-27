@@ -1,4 +1,19 @@
-Posts = new Meteor.Collection('posts');
+Post = class Post {
+  constructor (doc) {
+    _.extend(this, doc);
+  }
+  datestamp() {
+    let date = new Date();
+    return moment(date).format('YYYY-MM-DD');
+  }
+}
+
+
+Posts = new Meteor.Collection('posts', {
+  transform: function(document)  {
+    return new Post(document);
+  }
+});
 // Probably force to server methods for interactions
 
 PostsSchema = new SimpleSchema({

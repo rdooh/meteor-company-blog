@@ -12,8 +12,12 @@ describe('Post', function() {
       //
     });
 
-    it('should run a test that returns true', function() {
-      expect(post.test()).toBe(true);
+    it('should have a method called datestamp', function() {
+      expect(post.datestamp()).toBeDefined();
+    });
+
+    it('should return today\'s date when datestamp is called', function() {
+      expect(post.datestamp()).toEqual(moment().format('YYYY-MM-DD'));
     });
   });
 

@@ -1,5 +1,5 @@
-Post = function Post() {};
+//Post = function Post() {};
 
-Post.prototype.test = function() {
-  return true;
-};
+// Post.prototype.test = function() {
+//   return true;
+// };
