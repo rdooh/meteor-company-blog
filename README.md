@@ -18,6 +18,11 @@ when logged in, you may have some extra buttons on the top bar
 - [ ] basic setup
   - [ ] basic dev environment
   - [ ] basic planning
+- [ ] set up basic collections
+  - [ ] posts
+  - [ ] augment user
+  - [ ] set up some basic tests
+  - [ ] set up some seed data
 - [ ] set up basic accounts
   - [ ] add packages for basic password accounts
   - [ ] set up some seed data
@@ -26,9 +31,3 @@ when logged in, you may have some extra buttons on the top bar
 - [ ] set up simple pages for testing output to screen
   - [ ] set up some basic e2e tests
   - [ ] plan the page templates - simple
-- [ ] set up basic collections
-  - [ ] posts
-  - [ ] augment user
-  - [ ] set up some basic tests
-  - [ ] set up some seed data
--
