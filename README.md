@@ -24,9 +24,9 @@ when logged in, you may have some extra buttons on the top bar
   - [x] set up some seed data
 - [ ] set up basic collections
   - [x] posts
-  - [ ] augment user
+  - [x] augment user
   - [ ] set up some basic tests
-  - [ ] set up some seed data
+  - [x] set up some seed data
 - [ ] structure application
   - [ ] use the package pattern for the app?
 - [ ] set up simple pages for testing output to screen
