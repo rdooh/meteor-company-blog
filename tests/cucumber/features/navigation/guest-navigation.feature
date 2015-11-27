@@ -34,9 +34,11 @@ Feature: Navigation for All Visitors
   Scenario: Guest tries to visit a specific blog
     When I navigate to "/robdooh"
     Then I should see the H2 heading "robdooh's Blog"
+    And I should not see a button "Create Post"
 
 
-  @focus
+  #@focus
   Scenario: Guest tries to visit a specific blog post
     When I navigate to "/robdooh/why-i-love-meteor"
     Then I should see the H2 heading "Introduction"
+    And I should not see a button "Edit Post"
