@@ -25,10 +25,8 @@ when logged in, you may have some extra buttons on the top bar
 - [ ] set up basic collections
   - [x] posts
   - [x] augment user
-  - [ ] set up some basic tests DEFER
+  - [ ] set up some basic tests
   - [x] set up some seed data
-- [ ] structure application
-  - [ ] use the package pattern for the app?
 - [ ] set up simple pages for testing output to screen
   - [ ] set up some basic e2e tests
   - [ ] plan the page templates - simple
@@ -45,3 +43,5 @@ when logged in, you may have some extra buttons on the top bar
   - tests?
 - [ ] work on accounts and roles
   - tests?
+- [ ] structure application
+  - [ ] use the package pattern for the app?
