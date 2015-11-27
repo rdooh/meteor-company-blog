@@ -1,6 +1,8 @@
-h2 This will host basic blog layout
+h2 #{blogOwner}'s Blog
 
-h3 #{blogOwner}
+.editing-tools
+  if currentUser
+    button#create-new-post Create Post
 
 p This will have a list of posts:
 

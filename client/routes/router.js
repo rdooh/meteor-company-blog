@@ -10,12 +10,16 @@ Router.route('/', function () {
 
 
 
-Router.route('/:blogName', function () {
+Router.route('/:blogOwner', function () {
+
+
   let params = this.params;
-  let blogName = params.blogName;
+  let blogOwner = params.blogOwner;
+  // look up the blog username
+  // 
   this.render('blog',{
     data: {
-      blog: blogName
+      blogOwner: blogOwner
     }
   });
 });

@@ -32,13 +32,14 @@ module.exports = function () {
   });
 
   this.Then(/^I should see a button "([^"]*)"$/, function (buttonText) {
+    client.waitForExist('.editing-tools');
     client.waitForExist('button#create-new-post');
     expect(client.getText('button#create-new-post')).toEqual(buttonText);
   });
 
-  this.Then(/^I should not see a button "([^"]*)"$/, function (buttonText) {
-    client.waitForExist('button#create-new-post');
-    expect(client.getText('button#create-new-post')).not.toEqual(buttonText);
+  this.Then(/^I should not see a button "([^"]*)"$/, function () {
+    client.waitForExist('.editing-tools');
+    expect(client.isExisting('button#create-new-post')).toEqual(false);
   });
 
 
