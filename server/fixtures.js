@@ -4,11 +4,13 @@ Meteor.startup(function(){
     Accounts.createUser({
       email: 'rob@company.com',
       password: 'rob',
+      username: 'rob',
       _id: 'asdfasdfasdfads'
     });
     Accounts.createUser({
       email: 'joe@company.com',
       password: 'joe',
+      username: 'joe',
       _id: 'jgjgjhgjhghgkjh'
     });
   }

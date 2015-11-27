@@ -6,7 +6,7 @@ module.exports = function () {
   // You can use normal require here, cucumber is NOT run in a Meteor context (by design)
   var url = require('url');
 
-  this.Given(/^I am a new user$/, function () {
+  this.Given(/^I am a guest$/, function () {
     server.call('reset'); // server is a connection to the mirror
   });
 
@@ -18,7 +18,12 @@ module.exports = function () {
   this.Then(/^I should see the title "([^"]*)"$/, function (expectedTitle) {
     // no callbacks, no promises, just simple synchronous code!
     client.waitForExist('title');
-    expect(client.getTitle()).toEqual(expectedTitle); // using Jasmine's assertion library
+    expect(client.getTitle()).toEqual(expectedTitle);
   });
+
+  this.Then(/^I should see the H2 heading "([^"]*)"$/, function (expectedH2) {
+    client.waitForExist('h2');
+    expect(client.getText('h2')).toEqual(expectedH2);
+});
 
 };
