@@ -18,10 +18,10 @@ when logged in, you may have some extra buttons on the top bar
 - [x] basic setup
   - [x] basic dev environment
   - [x] basic planning
-- [ ] set up basic accounts
+- [x] set up basic accounts
   - [x] add packages for basic password accounts
   - [x] add login buttons
-  - [ ] set up some seed data
+  - [x] set up some seed data
 - [ ] set up basic collections
   - [ ] posts
   - [ ] augment user
