@@ -25,7 +25,7 @@ when logged in, you may have some extra buttons on the top bar
 - [ ] set up basic collections
   - [x] posts
   - [x] augment user
-  - [ ] set up some basic tests
+  - [ ] set up some basic tests DEFER
   - [x] set up some seed data
 - [ ] structure application
   - [ ] use the package pattern for the app?

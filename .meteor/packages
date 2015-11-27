@@ -33,7 +33,7 @@ insecure                # Allow all DB writes from clients (for prototyping)
 # Dev Environment
 mquandalle:jade         # I like jade
 check                   # helper for checking inputs
-audit-argument-checks   # checks for check
+# audit-argument-checks   # checks for check
 xolvio:cucumber         # E2E testing
 sanjo:jasmine           # Unit testing
 practicalmeteor:sinon   # Unit testing

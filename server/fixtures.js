@@ -1,16 +1,18 @@
 
 Meteor.startup(function(){
   if (Meteor.users.find().count() === 0) {
+
     Accounts.createUser({
-      email: 'rob@company.com',
+      email: 'robdooh@company.com',
       password: 'rob',
-      username: 'rob',
+      username: 'robdooh',
       _id: 'asdfasdfasdfads'
     });
+
     Accounts.createUser({
-      email: 'joe@company.com',
+      email: 'joecamel@company.com',
       password: 'joe',
-      username: 'joe',
+      username: 'joecamel',
       _id: 'jgjgjhgjhghgkjh'
     });
   }

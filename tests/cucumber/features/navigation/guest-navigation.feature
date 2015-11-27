@@ -9,7 +9,7 @@ Feature: Navigation for All Visitors
   # The background will be run for every scenario
   Background:
     Given I am a guest
-
+    
 
   @focus
   Scenario: Guest visits home page of the blog host
