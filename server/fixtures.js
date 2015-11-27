@@ -2,20 +2,26 @@
 Meteor.startup(function(){
   if (Meteor.users.find().count() === 0) {
 
-    Accounts.createUser({
-      email: 'robdooh@company.com',
-      password: 'rob',
+    let rob = Meteor.users.insert({
       username: 'robdooh',
       _id: 'asdfasdfasdfads'
     });
+    Accounts.setPassword(rob, 'rob');
+    Accounts.addEmail(rob, 'robdooh@company.com', true)
+    console.log('rob',Meteor.users.findOne(rob));
 
-    Accounts.createUser({
-      email: 'joecamel@company.com',
-      password: 'joe',
+
+    let joe = Accounts.createUser({
       username: 'joecamel',
       _id: 'jgjgjhgjhghgkjh'
     });
+    Accounts.setPassword(joe, 'joe');
+    Accounts.addEmail(joe, 'joecamel@company.com', true)
+    console.log('joe',Meteor.users.findOne(joe));
+
   }
+
+
 
   if (Posts.find().count() === 0) {
     Posts.insert({

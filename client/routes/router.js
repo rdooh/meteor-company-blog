@@ -9,17 +9,24 @@ Router.route('/', function () {
 });
 
 
-
-Router.route('/:blogOwner', function () {
-
-
+Router.route('/:blog', function () {
   let params = this.params;
-  let blogOwner = params.blogOwner;
+  let blog = params.blog;
   // look up the blog username
-  // 
-  this.render('blog',{
-    data: {
-      blogOwner: blogOwner
-    }
-  });
+  //
+  let blogOwner = Meteor.users.findOne({username: blog});
+
+  if (blogOwner) {
+
+    // console.log('blogowner',blogOwner.username);
+    this.render('blog',{
+      data: {
+        blogOwner: blogOwner.username
+      }
+    });
+  }else{
+    this.redirect('/');
+  }
+  //
+  //
 });
