@@ -50,6 +50,14 @@ accounts-password       # add basic accounts
 
 
 #--------------------------------
+# Collections
+aldeed:collection2      # schemas
+dburles:collection-helpers  # more domain object power
+#--------------------------------
+
+
+
+#--------------------------------
 # UI
 twbs:bootstrap                  # Bootstrap for quick up
 fortawesome:fontawesome         # Awesome
