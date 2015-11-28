@@ -76,8 +76,6 @@ Meteor.methods({
     let timestamp = moment().format('X');
     // prevent duplicate slugs
     let postWithSameLink = Posts.findOne({slug: postAttributes.slug});
-
-
     if (postWithSameLink) {
       postAttributes.slug += timestamp;
     }
@@ -114,16 +112,17 @@ Meteor.methods({
       content: String
     });
 
-    // prevent duplicate slugs
+    let timestamp = moment().format('X');
+    // prevent duplicate slugs not including itself
     let postWithSameLink = Posts.findOne({slug: postAttributes.slug});
     if (postWithSameLink) {
-      let timestamp = moment().format('X');
+      if(postWithSameLink._id != postAttributes._id)
       postAttributes.slug += timestamp;
     }
     let post = _.extend(postAttributes, {
       ownerId: Meteor.userId()
     });
-    var postId = Posts.insert(post);
+    var postId = Posts.update(postAttributes._id, {$set: postAttributes});
     return {
       _id: postId
     };

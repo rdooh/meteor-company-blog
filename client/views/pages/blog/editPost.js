@@ -17,29 +17,29 @@ if (Meteor.isClient) {
       Session.set('postSlugPreview',postSlugPreview);
     },
     'click #submitEditedPost': function(e, t) {
-      console.log('pressed submit edit');
-      // if(Meteor.user()){
-      //   let username = Meteor.user().username;
-      //   // target form for data
-      //   let title = t.find('#title').value;
-      //   let slug = App.Utils.formatSlug(title);
-      //   let description = t.find('#description').value;
-      //   let content = t.find('#content').value;
-      //   if (title !== '') {
-      //     let postData = {
-      //       'title': title,
-      //       'slug': slug,
-      //       'description': description,
-      //       'content': content
-      //     }
-      //     Meteor.call('editPost', postData, function(error, result) {
-      //       // display the error to the user and abort
-      //       if (error)
-      //         return alert(error.reason);
-      //       Router.go('/'+username+'/'+slug);
-      //     });
-      //   }
-      //};
+      if(Meteor.user()){
+        let username = Meteor.user().username;
+        // target form for data
+        let title = t.find('#title').value;
+        let slug = App.Utils.formatSlug(title);
+        let description = t.find('#description').value;
+        let content = t.find('#content').value;
+        if (title !== '') {
+          let postData = {
+            '_id': this._id,
+            'title': title,
+            'slug': slug,
+            'description': description,
+            'content': content
+          }
+          Meteor.call('editPost', postData, function(error, result) {
+            // display the error to the user and abort
+            if (error)
+              return alert(error.reason);
+            Router.go('/'+username+'/'+slug);
+          });
+        }
+      };
     }
   });
 }
