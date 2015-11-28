@@ -1,6 +1,12 @@
 .row.wrapper.border-bottom.white-bg.page-heading
   .col-lg-12
     h2 #{blogOwner.username}'s Blog
+      .editing-tools
+        if ownPost
+          a(href='/create')
+            button#create-new-post.btn.btn-primary.pull-right(type='button')
+              i.fa.fa-file
+              |  Create Post
     ol.breadcrumb
       li
         | Company, Inc. Blog
@@ -38,11 +44,15 @@
                 else
                   | Created On #{post.createdAt}
                   
-              .editing-tools
+              .editing-tools.pull-right
                 if ownPost
-                  button#edit-post.btn.btn-primary.pull-right(type='button')
+                  button#edit-post.btn.btn-primary(type='button')
                     i.fa.fa-file
                     |  Edit Post
+                if ownPost
+                  button#delete-post.btn.btn-warning(type='button')
+                    i.fa.fa-file
+                    |  Delete Post
           |  #{post.content}
           
           hr

@@ -99,7 +99,7 @@ Router.route('/:blog/:post', {
 
 let requireLogin = function() {
   if (! Meteor.user()) {
-    this.render('home');
+    Router.go('home');
   } else {
     this.next();
   }
