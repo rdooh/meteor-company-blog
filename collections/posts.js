@@ -14,21 +14,25 @@ Posts = new Meteor.Collection('posts', {
 
 
 PostsSchema = new SimpleSchema({
-  "title": {
+  'title': {
     type: String,
-    label: "Title"
+    label: 'Title'
   },
-  "slug": {
+  'slug': {
     type: String,
-    label: "Slug"
+    label: 'Slug'
   },
-  "description": {
+  'description': {
     type: String,
-    label: "Description"
+    label: 'Description'
+  },
+  'content': {
+    type: String,
+    label: 'Content'
   },
   createdAt: {
     type: Date,
-    label: "Creation Date",
+    label: 'Creation Date',
     autoValue: function() {
       if (this.isInsert) {
         return new Date;
@@ -41,7 +45,7 @@ PostsSchema = new SimpleSchema({
   },
   updatedAt: {
     type: Date,
-    label: "Last Updated",
+    label: 'Last Updated',
     autoValue: function() {
       if (this.isUpdate) {
         return new Date();
@@ -50,9 +54,9 @@ PostsSchema = new SimpleSchema({
     denyInsert: true,
     optional: true
   },
-  "ownerId": {
+  'ownerId': {
     type: String,
-    label: "Post Author"
+    label: 'Post Author'
   }
 });
 

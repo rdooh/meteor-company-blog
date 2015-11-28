@@ -22,22 +22,25 @@ Meteor.startup(function(){
   // Set up Initial Posts
   if (Posts.find().count() === 0) {
     Posts.insert({
-      "title": 'Why I Love Meteor',
-      "slug": 'why-i-love-meteor',
-      "description": 'This is a cool blog post',
-      "ownerId": 'asdfasdfasdfads'
+      'title': 'Why I Love Meteor',
+      'slug': 'why-i-love-meteor',
+      'description': 'This is a cool blog post',
+      'ownerId': 'asdfasdfasdfads',
+      'content': 'great content!'
     });
     Posts.insert({
-      "title": 'Super Post',
-      "slug": 'super-post',
-      "description": 'This is another cool blog post',
-      "ownerId": 'asdfasdfasdfads'
+      'title': 'Super Post',
+      'slug': 'super-post',
+      'description': 'This is another cool blog post',
+      'ownerId': 'asdfasdfasdfads',
+      'content': 'this is really something'
     });
     Posts.insert({
-      "title": 'Building a Blog',
-      "slug": 'building-a-blog',
-      "description": 'The story of this blog',
-      "ownerId": 'jgjgjhgjhghgkjh'
+      'title': 'Building a Blog',
+      'slug': 'building-a-blog',
+      'description': 'The story of this blog',
+      'ownerId': 'jgjgjhgjhghgkjh',
+      'content': 'just marvelous'
     });
   }
 });
