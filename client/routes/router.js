@@ -6,7 +6,7 @@ Router.configure({
 
 
 // Default home route
-Router.route('/', function () {
+Router.route('/', {name: 'home'}, function () {
   this.render('home',{
     data: {
       blogs: Meteor.users.find({}, {fields: {username: 1}})

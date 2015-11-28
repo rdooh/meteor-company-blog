@@ -1,0 +1,67 @@
++pageHeading title='Cheque Runs'
+.wrapper.wrapper-content.animated.fadeInRight
+  .row
+    .col-lg-12
+      .text-center.m-t-lg
+        h1
+          | Cheque Runs
+        small
+          | Search for a cheque run by id and download a formatted text file for submission to the bank
+        hr    
+  if currentUser
+    .row
+      .col-sm-6.col-sm-offset-3
+        form.lookup-cheque-run
+          .input-group
+            input.form-control(type='text', name='text', placeholder='Add 7-digit cheque run number')
+            span.input-group-btn
+              input.btn.btn-primary(type="submit",value="Go!")
+        hr
+    .row
+      .col-lg-12   
+        .ibox.float-e-margins
+          .ibox-title
+            | Recent Results
+          .ibox-content
+            table.footable.table.table-stripped.tablet.breakpoint.footable-loaded
+              thead
+                tr 
+                  th.footable-visible.footable-first-column.footable-sortable 
+                    | Run Number
+                    span.footable-sort-indicator
+                  th.footable-visible
+                    | # of Cheques
+                  th.footable-visible
+                    | Totals
+                  th.footable-visible
+                    | Queried At
+                  th.footable-visible
+                    | Save
+                  th.footable-visible
+                    | Test
+              tbody
+                each runList 
+                  tr 
+                    td.footable-visible.footable-first-column
+                      | #{chequeRunNumber}
+                    td.footable-visible
+                      | #{chequeRunData.length} 
+                    td.footable-visible
+                      | #{totals} 
+                    td.footable-visible
+                      | #{longDate} 
+                    td.footable-visible
+                      button.btn.btn-xs.btn-primary.testSaveButton Save
+                      
+                    td.footable-visible.footable-last-column
+                      input#testFile(type="checkbox",checked="{{testFile}}")
+                  
+              
+  else
+    | Please sign in
+        
+  //- .row
+  //-   .col-sm-6.col-sm-offset-3
+  //-     button.testSaveButton
+        
+    //- +projectList

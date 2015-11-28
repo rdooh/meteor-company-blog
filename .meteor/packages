@@ -46,6 +46,10 @@ velocity:html-reporter  # Unit testing
 iron:router             # Routing
 momentjs:moment         # Usually needed for date work
 numeral:numeral         # Needed less often but good for currency etc.
+logging
+reload
+random
+ejson
 #--------------------------------
 
 
@@ -65,7 +69,10 @@ dburles:collection-helpers  # more domain object power
 
 #--------------------------------
 # UI
+less
 twbs:bootstrap                  # Bootstrap for quick up
 fortawesome:fontawesome         # Awesome
 ian:accounts-ui-bootstrap-3     # bootstrap ui for account popup
+okgrow:router-autoscroll
+zimme:iron-router-active
 #--------------------------------

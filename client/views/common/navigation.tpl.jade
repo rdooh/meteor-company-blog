@@ -1,0 +1,19 @@
+nav.navbar-default.navbar-static-side(role='navigation')
+  .sidebar-collapse
+    // Close canvas menu used only on OffCanvas page
+    // You can remove this tag if you dont use offCanvas menu
+    a.close-canvas-menu
+      i.fa.fa-times
+    // End offCanvas menu toggle
+    ul#side-menu.nav
+      li.nav-header
+        //- .profile-element
+        //-   i.fa.fa-rocket
+        //-   | SWIS
+        .logo-element
+          i.fa.fa-rocket
+          | CI
+      li(class="{{isActiveRoute regex='home'}}")
+        a(href="{{pathFor route='home'}}")
+          i.fa.fa-dashboard
+          span.nav-label Dashboard
