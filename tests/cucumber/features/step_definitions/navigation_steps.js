@@ -43,13 +43,41 @@ module.exports = function () {
   });
 
   this.Then(/^I should see a first post called "([^"]*)"$/, function (postTitle) {
-    client.waitForExist('ul.post-title-links');
-    expect(client.getText('ul.post-title-links > li > a')[0]).toEqual(postTitle);
+    client.waitForExist('.contact-box');
+    expect(client.getText('.contact-box > a > h2')[0]).toEqual(postTitle);
   });
 
   this.Then(/^I should see the only post called "([^"]*)"$/, function (postTitle) {
-    client.waitForExist('ul.post-title-links');
-    expect(client.getText('ul.post-title-links > li > a')).toEqual(postTitle);
+    client.waitForExist('.contact-box');
+    expect(client.getText('.contact-box > a > h2')).toEqual(postTitle);
   });
+
+
+
+  this.Then(/^I should see an edit button "([^"]*)"$/, function (buttonText) {
+    client.waitForExist('.editing-tools');
+    expect(client.isExisting('button#editPost')).toEqual(true);
+  });
+
+  this.Then(/^I should see a delete button "([^"]*)"$/, function (buttonText) {
+    client.waitForExist('.editing-tools');
+    expect(client.isExisting('button#deletePost')).toEqual(true);
+  });
+
+  this.Then(/^I should not see an edit button "([^"]*)"$/, function (buttonText) {
+    client.waitForExist('.editing-tools');
+    expect(client.isExisting('button#editPost')).toEqual(false);
+  });
+
+  this.Then(/^I should not see a delete button "([^"]*)"$/, function (buttonText) {
+    client.waitForExist('.editing-tools');
+    expect(client.isExisting('button#deletePost')).toEqual(false);
+  });
+
+
+
+
+
+
 
 };

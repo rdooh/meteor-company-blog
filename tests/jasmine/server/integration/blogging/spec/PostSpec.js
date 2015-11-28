@@ -16,6 +16,7 @@ describe('Post', function() {
         "title": 'Why I Love Meteor',
         "slug": 'why-i-love-meteor',
         "description": 'This is a cool blog post',
+        "content": 'There is content here',
         "ownerId": currentUserId
       });
     });

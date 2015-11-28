@@ -36,21 +36,24 @@
         "title": 'Why I Love Meteor',
         "slug": 'why-i-love-meteor',
         "description": 'This is a cool blog post',
+        "content": 'This is a cool blog post',
         "ownerId": 'asdfasdfasdfads'
       });
       Posts.insert({
         "title": 'Super Post',
         "slug": 'super-post',
         "description": 'This is another cool blog post',
+        "content": 'This is a cool blog post',
         "ownerId": 'asdfasdfasdfads'
       });
       Posts.insert({
         "title": 'Building a Blog',
         "slug": 'building-a-blog',
         "description": 'The story of this blog',
+        "content": 'This is a cool blog post',
         "ownerId": 'jgjgjhgjhghgkjh'
       });
     }
   });
-  
+
 })();
