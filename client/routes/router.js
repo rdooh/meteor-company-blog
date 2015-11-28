@@ -19,6 +19,43 @@ Router.route('/', {
 });
 
 
+// Default home route
+Router.route('/create', {
+  name: 'create',
+  action: function () {
+    this.render('createPost',{
+      data: function() {
+        let blogOwner = Meteor.user();
+        if (blogOwner) {
+          return blogOwner;
+        }
+      }
+    });
+  }
+});
+
+
+
+// Default home route
+Router.route('/edit/:id', {
+  name: 'editPost',
+  action: function () {
+    this.render('editPost',{
+      data: function() {
+        let post = Posts.findOne(this.params.id);
+        if (post) {
+          return post;
+        }
+      }
+    });
+  }
+});
+
+
+
+
+
+
 // Reusable base controller
 BlogController = RouteController.extend({
   subscriptions: function() {
@@ -74,3 +111,16 @@ Router.route('/:blog/:post', {
   name: 'blog.post',
   controller: 'PostController'
 });
+
+
+
+
+
+let requireLogin = function() {
+  if (! Meteor.user()) {
+    Router.go('home');
+  } else {
+    this.next();
+  }
+}
+Router.onBeforeAction(requireLogin, {only: 'create'});

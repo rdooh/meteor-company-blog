@@ -1,0 +1,64 @@
+.row.wrapper.border-bottom.white-bg.page-heading
+  .col-lg-12
+    h2 Edit a Post
+    ol.breadcrumb
+      li
+        | Company, Inc. Blog
+      li.active
+        strong #{blogOwner}
+
+.wrapper.wrapper-content.animated.fadeInRight
+  .row
+    .col-lg-12
+      .text-center.m-t-lg
+        h1
+          | Edit Post
+        h3 By 
+          a(href='/{{blogOwner}}') #{blogOwner}
+        small
+          | Edit the form
+        hr    
+
+  .row
+    .col-lg-12
+      .ibox.float-e-margins
+        .ibox-title
+          h5
+            | Edit any fields
+        .ibox-content
+          .form-horizontal(method='get')
+            .form-group
+              label.col-sm-2.control-label Title
+              .col-sm-10
+                input.form-control(type='text', placeholder='Add a catchy title',value='{{title}}')#title
+            .hr-line-dashed
+            
+            .form-group
+              label.col-lg-2.control-label Slug
+              .col-lg-10
+                input.form-control(type='text', disabled='', placeholder='Preview of your post slug', value='#{postSlugPreview}')#slug
+            .hr-line-dashed
+              
+            .form-group
+              label.col-sm-2.control-label Description
+              .col-sm-10
+                input.form-control(type='text', placeholder='Add a short overview',value='{{description}}')#description
+            .hr-line-dashed
+              
+                
+            .form-group
+              label.col-sm-2.control-label Content
+              .col-sm-10
+                textarea.form-control(type='text', placeholder='write your story')#content
+                  | #{content}
+            .hr-line-dashed
+              
+            .form-group
+              .col-sm-4.col-sm-offset-2
+                a(href='/{{blogOwner}}')
+                  button.btn.btn-white 
+                    i.fa.fa-times
+                    | Cancel
+                button.btn.btn-primary#submitEditedPost
+                    i.fa.fa-check
+                    | Save changes

@@ -3,9 +3,10 @@
     h2 #{blogName}
       .editing-tools
         if ownBlog
-          button#create-new-post.btn.btn-primary.pull-right(type='button')
-            i.fa.fa-file
-            |  Create Post
+          a(href='/create')
+            button#create-new-post.btn.btn-primary.pull-right(type='button')
+              i.fa.fa-file
+              |  Create Post
     ol.breadcrumb
       li
         | Company, Inc. Blog

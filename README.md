@@ -45,10 +45,10 @@ when logged in, you may have some extra buttons on the top bar
   - [x] plan templates for revision
   - [x] complete majority
 
-- [ ] CUD
-  - [ ] set up methods
-  - [ ] set up some tests
-  - [ ] wire to UI
+- [x] CUD
+  - [x] set up methods
+  - [x] set up some tests
+  - [x] wire to UI
 
 
 
