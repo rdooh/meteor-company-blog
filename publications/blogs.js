@@ -1,5 +1,5 @@
 if(Meteor.isServer){
-  Meteor.publish('blog', function (blog) {
-    return Meteor.users.find({username: blog});
+  Meteor.publish('blog', function () {
+    return Meteor.users.find({});
   });
 }

@@ -1,7 +1,9 @@
+// Route configuration
 Router.configure({
   layoutTemplate: 'main',
-  notFoundTemplate: 'notFound'
+  notFoundTemplate: 'notFound' //TODO: make this a wrapper
 });
+
 
 // Default home route
 Router.route('/', function () {
@@ -13,31 +15,58 @@ Router.route('/', function () {
 });
 
 
-Router.route('/:blog', {
-  name: 'blog',
+// Reusable base controller
+BlogController = RouteController.extend({
   subscriptions: function() {
-    // add the subscription to the waitlist
     this.subscribe('blog', this.params.blog).wait();
-    this.subscribe('posts').wait();
   },
   action: function () {
-    let params = this.params;
-    let blog = params.blog;
-    // look up the blog username
-    let blogOwner = Meteor.users.findOne({username: blog});
-    if (blogOwner) {
-      console.log(blogOwner,'tester')
-      this.render('blogWrapper',{
-        data: {
-          blogOwner: blogOwner.username,
-          posts: function(){
-            return Posts.find({ownerId:blogOwner._id});
+    this.render('blogWrapper',{
+      data: function() {
+        let blogOwner = Meteor.users.findOne({username: this.params.blog});
+        if (blogOwner) {
+          return blogOwner;
+        }
+      }
+    });
+  }
+});
+
+// Use the controller
+Router.route('/:blog', {
+  name: 'blog',
+  controller: 'BlogController'
+});
+
+
+
+// Reusable base controller
+PostController = RouteController.extend({
+  subscriptions: function() {
+    this.subscribe('blog', this.params.blog).wait();
+    this.subscribe('allposts').wait();
+  },
+  action: function () {
+    this.render('post',{
+      data: function() {
+        let blogOwner = Meteor.users.findOne({username: this.params.blog});
+        let post = Posts.findOne({slug: this.params.post});
+        if (blogOwner) {
+          if (post) {
+            let dataset = {
+              blogOwner: blogOwner,
+              post: post
+            }
+            return dataset;
           }
         }
-      });
-    }else{
-      this.layout('notFound');
-      this.next();
-    }
+      }
+    });
   }
+});
+
+
+Router.route('/:blog/:post', {
+  name: 'blog.post',
+  controller: 'PostController'
 });

@@ -7,29 +7,11 @@ describe('Post', function() {
     post = new Post();
   });
 
-  describe('when there is a post class', function() {
-    // not really bdd
-    beforeEach(function() {
-      //
-    });
-
-    it('should have a method called datestamp', function() {
-      expect(post.datestamp()).toBeDefined();
-    });
-
-    it('should return today\'s date when datestamp is called', function() {
-      expect(post.datestamp()).toEqual(moment().format('YYYY-MM-DD'));
-    });
-  });
-
-
-
-
-
   describe('when a post is created', function() {
     let newPostId;
     let currentUserId = 'asdfasdfasdfads'
     beforeEach(function() {
+      Posts.remove({});
       newPostId = Posts.insert({
         "title": 'Why I Love Meteor',
         "slug": 'why-i-love-meteor',
