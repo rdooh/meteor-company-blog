@@ -15,6 +15,8 @@ when logged in, you will have a create button on your personal page
 when logged in, you may have some extra buttons on the top bar
 
 ## Work Plan
+
+### START WORK
 - [x] basic setup
   - [x] basic dev environment
   - [x] basic planning
@@ -50,9 +52,10 @@ when logged in, you may have some extra buttons on the top bar
   - [x] set up some tests
   - [x] wire to UI
 
+### END WORK
 
 
-Possible Refactoring
+## Possible Refactoring
 
 - [ ] recast collection documents as domain object class instances (try es2015)
   - tests?
