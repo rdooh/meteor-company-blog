@@ -1,5 +1,4 @@
-| #{blogOwner}
 ul.post-title-links
-  each posts
+  each posts _id 
     li 
-      a(href="/{{ownerSlug}}/{{title}}") #{title}
+      a(href="/{{ownerSlug}}/{{postSlug title }}") #{title}

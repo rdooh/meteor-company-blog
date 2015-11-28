@@ -30,10 +30,10 @@ when logged in, you may have some extra buttons on the top bar
 - [x] set up simple pages for testing output to screen
   - [x] set up some basic e2e tests
   - [x] plan the page templates - simple
-- [ ] set up schemas
-  - [ ] clean up some tests
-  - [ ] work on fixtures
-  - [ ] work on schemas
+- [x] set up schemas
+  - [x] clean up some tests
+  - [x] work on fixtures
+  - [x] work on schemas
 - [ ] Improve Read
   - [ ] templates to better reflect data
   - [ ] routes logic improvements
