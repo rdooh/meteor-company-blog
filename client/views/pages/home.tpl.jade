@@ -1,10 +1,35 @@
-h2 All Blogs
-
-p There will be a list of all blogs
-
-ul
-  each blogs
-    li 
-      a(href="/{{username}}") #{username}
-      
++pageHeading title='Home'
+.wrapper.wrapper-content.animated.fadeInRight
+  .row
+    .col-lg-12
+      .text-center.m-t-lg
+        h1
+          | Home
+        small This is the blog for Company, Inc.
+        hr
+  .row
+    each blogs
+      .col-lg-4
+        .contact-box
+          a(href="/{{username}}")
+            .col-sm-4
+              .text-center
+                img.img-circle.m-t-xs.img-responsive(alt='image', src='img/a1.jpg')
+                .m-t-xs.font-bold Company Man
+            .col-sm-8
+              h3
+                strong #{username}
+              p
+                i.fa.fa-map-marker
+                |  Riviera State 32/106
+              address
+                strong Twitter, Inc.
+                br
+                |                             795 Folsom Ave, Suite 600
+                br
+                |                             San Francisco, CA 94107
+                br
+                abbr(title='Phone') P:
+                |  (123) 456-7890
+            .clearfix
       

@@ -25,9 +25,9 @@ module.exports = function () {
     expect(client.getTitle()).toEqual(expectedTitle);
   });
 
-  this.Then(/^I should see the H2 heading "([^"]*)"$/, function (expectedH2) {
-    client.waitForExist('h2');
-    expect(client.getText('h2')).toEqual(expectedH2);
+  this.Then(/^I should see the H1 heading "([^"]*)"$/, function (expectedH1) {
+    client.waitForExist('H1');
+    expect(client.getText('H1')).toEqual(expectedH1);
   });
 
 };

@@ -6,12 +6,16 @@ Router.configure({
 
 
 // Default home route
-Router.route('/', {name: 'home'}, function () {
-  this.render('home',{
-    data: {
-      blogs: Meteor.users.find({}, {fields: {username: 1}})
-    }
-  });
+Router.route('/', {
+  name: 'home',
+  action: function () {
+    this.render('home',{
+      data: {
+        blogs: Meteor.users.find({}, {fields: {username: 1}})
+        }
+      }
+    );
+  }
 });
 
 
