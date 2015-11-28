@@ -20,7 +20,39 @@
         hr    
 
   .row
-    .col-lg-10.col-lg-offset-1
-      .ibox
+    .col-lg-12
+      .ibox.float-e-margins
+        .ibox-title
+          h5
+            | Fill out all fields
         .ibox-content
-        
+          form.form-horizontal(method='get')
+            .form-group
+              label.col-sm-2.control-label Title
+              .col-sm-10
+                input.form-control(type='text', placeholder='Add a catchy title')#title
+            .hr-line-dashed
+            
+            .form-group
+              label.col-lg-2.control-label Slug
+              .col-lg-10
+                input.form-control(type='text', disabled='', placeholder='Preview of your post slug', value='#{postSlugPreview}')#slug
+            .hr-line-dashed
+              
+            .form-group
+              label.col-sm-2.control-label Description
+              .col-sm-10
+                input.form-control(type='text', placeholder='Add a short overview')#description
+            .hr-line-dashed
+              
+                
+            .form-group
+              label.col-sm-2.control-label Content
+              .col-sm-10
+                textarea.form-control(type='text', placeholder='write your story')#content
+            .hr-line-dashed
+              
+            .form-group
+              .col-sm-4.col-sm-offset-2
+                button.btn.btn-white(type='submit') Cancel
+                button.btn.btn-primary(type='submit') Save changes
