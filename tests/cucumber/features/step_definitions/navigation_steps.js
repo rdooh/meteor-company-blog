@@ -24,6 +24,32 @@ module.exports = function () {
   this.Then(/^I should see the H2 heading "([^"]*)"$/, function (expectedH2) {
     client.waitForExist('h2');
     expect(client.getText('h2')).toEqual(expectedH2);
-});
+  });
+
+  this.Then(/^I should see the H3 heading "([^"]*)"$/, function (expectedH3) {
+    client.waitForExist('h3');
+    expect(client.getText('h3')).toEqual(expectedH3);
+  });
+
+  this.Then(/^I should see a button "([^"]*)"$/, function (buttonText) {
+    client.waitForExist('.editing-tools');
+    client.waitForExist('button#create-new-post');
+    expect(client.getText('button#create-new-post')).toEqual(buttonText);
+  });
+
+  this.Then(/^I should not see a button "([^"]*)"$/, function () {
+    client.waitForExist('.editing-tools');
+    expect(client.isExisting('button#create-new-post')).toEqual(false);
+  });
+
+  this.Then(/^I should see a first post called "([^"]*)"$/, function (postTitle) {
+    client.waitForExist('ul.post-title-links');
+    expect(client.getText('ul.post-title-links > li > a')[0]).toEqual(postTitle);
+  });
+
+  this.Then(/^I should see the only post called "([^"]*)"$/, function (postTitle) {
+    client.waitForExist('ul.post-title-links');
+    expect(client.getText('ul.post-title-links > li > a')).toEqual(postTitle);
+  });
 
 };

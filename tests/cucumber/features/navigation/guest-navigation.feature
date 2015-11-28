@@ -9,9 +9,9 @@ Feature: Navigation for All Visitors
   # The background will be run for every scenario
   Background:
     Given I am a guest
-    
 
-  @focus
+
+  #@focus
   Scenario: Guest visits home page of the blog host
     When I navigate to "/"
     Then I should see the title "Company, Inc. Blog"
@@ -19,7 +19,7 @@ Feature: Navigation for All Visitors
 
   # This scenario will not run as part of the Meteor dev cycle because it does not have the @focus
   # tag, but it will run on CI if you use `meteor --test` for instance
-  @focus
+  #@focus
   Scenario: Guest tries to visit a page that does not exist
     When I navigate to "/brokenlink"
     Then I should see the H2 heading "404"
@@ -33,10 +33,20 @@ Feature: Navigation for All Visitors
   @focus
   Scenario: Guest tries to visit a specific blog
     When I navigate to "/robdooh"
-    Then I should see the H2 heading "Rob's Blog"
-
+    Then I should see the H2 heading "robdooh's Blog"
+    And I should not see a button "Create Post"
+    And I should see a first post called "Why I Love Meteor"
 
   @focus
+  Scenario: Guest tries to visit a second blog
+    When I navigate to "/joecamel"
+    Then I should see the H2 heading "joecamel's Blog"
+    And I should not see a button "Create Post"
+    And I should see the only post called "Building a Blog"
+
+
+  #@focus
   Scenario: Guest tries to visit a specific blog post
-    When I navigate to "/robdooh/introduction"
+    When I navigate to "/robdooh/why-i-love-meteor"
     Then I should see the H2 heading "Introduction"
+    And I should not see a button "Edit Post"

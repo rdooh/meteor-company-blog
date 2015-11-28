@@ -37,7 +37,7 @@ module.exports = function () {
     client.waitForExist('#login-buttons-open-change-password', 7000);
     client.waitForVisible('#login-dropdown-list > a.dropdown-toggle');
     client.getText('#login-dropdown-list > a.dropdown-toggle', function (err, username) {
-        assert.equal(username, 'rob@example.com');
+        assert.equal(username, 'robdooh');
       });
     callback();
   });
