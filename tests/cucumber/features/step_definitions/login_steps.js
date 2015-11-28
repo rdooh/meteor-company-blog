@@ -19,14 +19,14 @@ module.exports = function () {
   });
 
   this.When(/^I enter my authentication information$/, function (callback) {
-    client.setValue('input#login-email', 'robdooh@example.com');
-    client.setValue('input#login-password', 'test');
+    client.setValue('input#login-username-or-email', 'robdooh@company.com');
+    client.setValue('input#login-password', 'rob');
     client.click('#login-buttons-password');
     callback();
   });
 
   this.When(/^I enter incorrect authentication information$/, function (callback) {
-      client.setValue('input#login-email', 'nobody@example.com');
+      client.setValue('input#login-username-or-email', 'nobody@example.com');
       client.setValue('input#login-password', 'nothing');
       client.click('#login-buttons-password');
       callback();

@@ -22,7 +22,7 @@ Feature: Navigation for All Visitors
   #@focus
   Scenario: Guest tries to visit a page that does not exist
     When I navigate to "/brokenlink"
-    Then I should see the H1 heading "404"
+    Then I should see the H2 heading "404"
 
 
 #  @focus
@@ -30,14 +30,14 @@ Feature: Navigation for All Visitors
 #    When I navigate to "/robdooh/edit"
 #    Then I should see the H1 heading "All Blogs"
 
-  @focus
+  #@focus
   Scenario: Guest tries to visit a specific blog
     When I navigate to "/robdooh"
     Then I should see the H1 heading "robdooh's Blog"
     And I should not see a button "Create Post"
-    And I should see a first post called "Why I Love Meteor"
+    And I should see a first post called "Super Post"
 
-  @focus
+  #@focus
   Scenario: Guest tries to visit a second blog
     When I navigate to "/joecamel"
     Then I should see the H1 heading "joecamel's Blog"
@@ -48,5 +48,5 @@ Feature: Navigation for All Visitors
   #@focus
   Scenario: Guest tries to visit a specific blog post
     When I navigate to "/robdooh/why-i-love-meteor"
-    Then I should see the H1 heading "Introduction"
+    Then I should see the H1 heading "Why I Love Meteor"
     And I should not see a button "Edit Post"
