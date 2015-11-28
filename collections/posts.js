@@ -63,44 +63,6 @@ PostsSchema = new SimpleSchema({
 Posts.attachSchema( PostsSchema, {transform: true} );
 
 
-
-
-// TODO: for CUD, force to server methods for interactions
-if(Meteor.isClient){
-  // Allow
-  Posts.allow({
-    insert: function(){
-      // allow if anyone logged in
-      return true;
-    },
-    update: function(){
-      // Disallow updates on the client by default.
-      return false;
-    },
-    remove: function(){
-      // Disallow removes on the client by default.
-      return false;
-    }
-  });
-
-  // Deny
-  Posts.deny({
-    insert: function(){
-      // Deny inserts on the client by default.
-      return false;
-    },
-    update: function(){
-      // Deny updates on the client by default.
-      return true;
-    },
-    remove: function(){
-      // Deny removes on the client by default.
-      return true;
-    }
-  });
-}
-
-
 Meteor.methods({
   createPost: function(postAttributes) {
     check(Meteor.userId(), String);
@@ -117,5 +79,20 @@ Meteor.methods({
     return {
       _id: postId
     };
+  },
+  deletePost: function(postId) {
+    check(Meteor.userId(), String);
+    check(postId, String);
+
+    let post = Posts.findOne(postId);
+    if(post){
+      if(post.ownerId === Meteor.userId()) {
+        let success = Posts.remove(postId);
+        return success;
+      }
+    }
   }
+
+
+
 });
