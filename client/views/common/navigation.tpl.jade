@@ -17,3 +17,9 @@ nav.navbar-default.navbar-static-side(role='navigation')
         a(href="{{pathFor route='home'}}")
           i.fa.fa-dashboard
           span.nav-label Home
+      each bloggers
+        li(class="{{isActiveRoute regex=username}}")
+          a(href="/{{username}}")
+            i.fa.fa-user
+            span.nav-label #{username}
+        
