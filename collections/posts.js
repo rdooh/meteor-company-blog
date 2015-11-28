@@ -72,6 +72,15 @@ Meteor.methods({
       description: String,
       content: String
     });
+
+    let timestamp = moment().format('X');
+    // prevent duplicate slugs
+    let postWithSameLink = Posts.findOne({slug: postAttributes.slug});
+
+
+    if (postWithSameLink) {
+      postAttributes.slug += timestamp;
+    }
     let post = _.extend(postAttributes, {
       ownerId: Meteor.userId()
     });
@@ -80,6 +89,8 @@ Meteor.methods({
       _id: postId
     };
   },
+
+
   deletePost: function(postId) {
     check(Meteor.userId(), String);
     check(postId, String);
@@ -91,6 +102,32 @@ Meteor.methods({
         return success;
       }
     }
+  },
+
+
+  editPost: function(postAttributes) {
+    check(Meteor.userId(), String);
+    check(postAttributes, {
+      _id: String,
+      title: String,
+      slug: String,
+      description: String,
+      content: String
+    });
+
+    // prevent duplicate slugs
+    let postWithSameLink = Posts.findOne({slug: postAttributes.slug});
+    if (postWithSameLink) {
+      let timestamp = moment().format('X');
+      postAttributes.slug += timestamp;
+    }
+    let post = _.extend(postAttributes, {
+      ownerId: Meteor.userId()
+    });
+    var postId = Posts.insert(post);
+    return {
+      _id: postId
+    };
   }
 
 

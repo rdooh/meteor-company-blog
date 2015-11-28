@@ -36,6 +36,25 @@ Router.route('/create', {
 
 
 
+// Default home route
+Router.route('/edit/:id', {
+  name: 'editPost',
+  action: function () {
+    this.render('editPost',{
+      data: function() {
+        let blogOwner = Meteor.user();
+        if (blogOwner) {
+          return blogOwner;
+        }
+      }
+    });
+  }
+});
+
+
+
+
+
 
 // Reusable base controller
 BlogController = RouteController.extend({
