@@ -39,10 +39,10 @@
           .text-center.article-title
             span.text-muted
               i.fa.fa-clock-o
-                if post.updatedAt
-                  | Last Updated: #{post.updatedAt}
-                else
-                  | Created On #{post.createdAt}
+              if post.updatedAt
+                | Last Updated: #{post.updatedAt}
+              else
+                | Created On #{post.createdAt}
                   
               .editing-tools.pull-right
                 if ownPost

@@ -8,12 +8,12 @@ UsersSchema = new SimpleSchema({
     type: [Object],
     optional: true
   },
-  "emails.$.address": {
+  'emails.$.address': {
     type: String,
     regEx: SimpleSchema.RegEx.Email,
     optional: true
   },
-  "emails.$.verified": {
+  'emails.$.verified': {
     type: Boolean,
     optional: true
   },
