@@ -39,10 +39,12 @@ when logged in, you may have some extra buttons on the top bar
   - [x] routes logic improvements
   - [x] transfer to subscriptions
 - [ ] Major UI rework
-  - [ ] add assets
+  - [x] add assets
+  - [x] solve test regressions
+  - [ ] add new tests
   - [ ] plan templates for revision
 
-  
+
 - [ ] recast collection documents as domain object class instances (try es2015)
   - tests?
 - [ ] set up basic CRUD operations, attached to the domain objects
