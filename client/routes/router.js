@@ -36,6 +36,7 @@ Router.route('/create', {
 
 
 
+
 // Reusable base controller
 BlogController = RouteController.extend({
   subscriptions: function() {
@@ -91,3 +92,16 @@ Router.route('/:blog/:post', {
   name: 'blog.post',
   controller: 'PostController'
 });
+
+
+
+
+
+let requireLogin = function() {
+  if (! Meteor.user()) {
+    this.render('home');
+  } else {
+    this.next();
+  }
+}
+Router.onBeforeAction(requireLogin, {only: 'create'});

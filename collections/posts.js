@@ -71,7 +71,7 @@ if(Meteor.isClient){
   Posts.allow({
     insert: function(){
       // allow if anyone logged in
-      return !! Meteor.userId();
+      return true;
     },
     update: function(){
       // Disallow updates on the client by default.
@@ -87,7 +87,7 @@ if(Meteor.isClient){
   Posts.deny({
     insert: function(){
       // Deny inserts on the client by default.
-      return true;
+      return false;
     },
     update: function(){
       // Deny updates on the client by default.

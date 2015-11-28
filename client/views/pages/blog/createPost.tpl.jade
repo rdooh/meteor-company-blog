@@ -26,7 +26,7 @@
           h5
             | Fill out all fields
         .ibox-content
-          form.form-horizontal(method='get')
+          .form-horizontal(method='get')
             .form-group
               label.col-sm-2.control-label Title
               .col-sm-10
@@ -54,5 +54,10 @@
               
             .form-group
               .col-sm-4.col-sm-offset-2
-                button.btn.btn-white(type='submit') Cancel
-                button.btn.btn-primary(type='submit') Save changes
+                a(href='/{{username}}')
+                  button.btn.btn-white 
+                    i.fa.fa-times
+                    | Cancel
+                button.btn.btn-primary#submitNewPost
+                    i.fa.fa-check
+                    | Save changes

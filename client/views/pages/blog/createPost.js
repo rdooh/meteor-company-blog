@@ -10,30 +10,29 @@ if (Meteor.isClient) {
 
   Template.createPost.events({
     'keyup #title': function(event) {
-      console.log('test');
       let inputTitle = $(event.target).val();
-      console.log(inputTitle);
       let postSlugPreview = App.Utils.formatSlug(inputTitle);
       Session.set('postSlugPreview',postSlugPreview);
     },
-    'click button': function(e, t) {
+    'click #submitNewPost': function(e, t) {
       if(Meteor.user()){
         let ownerId = Meteor.userId();
         let username = Meteor.user().username;
         // target form for data
-        let title = t.find('#content');
+        let title = t.find('#title').value;
         let slug = App.Utils.formatSlug(title);
-        let description = t.find('#description');
-        let content = t.find('#content');
+        let description = t.find('#description').value;
+        let content = t.find('#content').value;
         if (title !== '') {
           // as long as there's a title, insert
-          Posts.insert({
+          let postResult = Posts.insert({
             'title': title,
             'slug': slug,
             'description': description,
             'content': content,
             'ownerId': ownerId
           });
+
         }
         return Router.go('/'+username+'/'+slug);
       }
