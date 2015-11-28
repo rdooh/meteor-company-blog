@@ -34,18 +34,31 @@ when logged in, you may have some extra buttons on the top bar
   - [x] clean up some tests
   - [x] work on fixtures
   - [x] work on schemas
-- [ ] Improve Read
-  - [ ] templates to better reflect data
-  - [ ] routes logic improvements
-  - [ ] transfer to subscriptions
+- [x] Improve Read
+  - [x] templates to better reflect data
+  - [x] routes logic improvements
+  - [x] transfer to subscriptions
+- [x] Major UI rework
+  - [x] add assets
+  - [x] solve test regressions
+  - [x] add new tests
+  - [x] plan templates for revision
+  - [x] complete majority
+
+- [ ] CUD
+  - [ ] set up methods
+  - [ ] set up some tests
+  - [ ] wire to UI
+
+
+
+Possible Refactoring
+
 - [ ] recast collection documents as domain object class instances (try es2015)
   - tests?
 - [ ] set up basic CRUD operations, attached to the domain objects
   - tests?
 - [ ] security concerns for domain objects
-  - tests?
-- [ ] build working UI
-  - [ ] plan tempates for revision
   - tests?
 - [ ] work on accounts and roles
   - tests?

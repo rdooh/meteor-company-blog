@@ -16,15 +16,8 @@ describe('Post', function() {
         "title": 'Why I Love Meteor',
         "slug": 'why-i-love-meteor',
         "description": 'This is a cool blog post',
-        createdAt: ( new Date(2015, 3, 14 ).getTime() / 1000 ),
-        updatedAt: ( new Date(2015, 5, 18 ).getTime() / 1000 ),
         "ownerId": currentUserId
       });
-    });
-
-    it('should exist with methods attached', function() {
-      let newPost = Posts.findOne(newPostId);
-      expect(newPost.datestamp()).toBeDefined();
     });
 
     it('should belong to currentUserId', function() {

@@ -16,10 +16,10 @@ Feature: Navigation for Blog Owners
     And I enter my authentication information
     Then I should be logged in
     When I navigate to "/robdooh"
-    Then I should see the H2 heading "robdooh's Blog"
+    Then I should see the H1 heading "robdooh's Blog"
     And I should see a button "Create Post"
     When I navigate to "/robdooh/why-i-love-meteor"
-    Then I should see the H2 heading "Why I Love Meteor"
+    Then I should see the H1 heading "Why I Love Meteor"
     And I should see a button "Edit Post"
 
   #@focus
@@ -28,8 +28,8 @@ Feature: Navigation for Blog Owners
     And I enter my authentication information
     Then I should be logged in
     When I navigate to "/joecamel"
-    Then I should see the H2 heading "joecamel's Blog"
+    Then I should see the H1 heading "joecamel's Blog"
     And I should not see a button "Create Post"
     When I navigate to "/joecamel/building-a-blog"
-    Then I should see the H2 heading "Building a Blog"
+    Then I should see the H1 heading "Building a Blog"
     And I should not see a button "Edit Post"

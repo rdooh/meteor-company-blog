@@ -1,0 +1,29 @@
+.row.wrapper.border-bottom.white-bg.page-heading
+  .col-lg-12
+    h2 #{blogName}
+      .editing-tools
+        if ownBlog
+          button#create-new-post.btn.btn-primary.pull-right(type='button')
+            i.fa.fa-file
+            |  Create Post
+    ol.breadcrumb
+      li
+        | Company, Inc. Blog
+      li.active
+        strong {{username}}
+.wrapper.wrapper-content.animated.fadeInRight
+  .row
+    .col-lg-12
+      .text-center.m-t-lg
+        h1
+          | #{blogName}
+        small Check it out
+        hr
+    .row
+      .col-lg-12   
+        .ibox.float-e-margins
+          .ibox-title
+            | Recent Posts
+
+          .ibox-content
+            +posts
