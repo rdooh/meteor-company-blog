@@ -52,4 +52,32 @@ module.exports = function () {
     expect(client.getText('.contact-box > a > h2')).toEqual(postTitle);
   });
 
+
+
+  this.Then(/^I should see an edit button "([^"]*)"$/, function (buttonText) {
+    client.waitForExist('.editing-tools');
+    expect(client.isExisting('button#editPost')).toEqual(true);
+  });
+
+  this.Then(/^I should see a delete button "([^"]*)"$/, function (buttonText) {
+    client.waitForExist('.editing-tools');
+    expect(client.isExisting('button#deletePost')).toEqual(true);
+  });
+
+  this.Then(/^I should not see an edit button "([^"]*)"$/, function (buttonText) {
+    client.waitForExist('.editing-tools');
+    expect(client.isExisting('button#editPost')).toEqual(false);
+  });
+
+  this.Then(/^I should not see a delete button "([^"]*)"$/, function (buttonText) {
+    client.waitForExist('.editing-tools');
+    expect(client.isExisting('button#deletePost')).toEqual(false);
+  });
+
+
+
+
+
+
+
 };
