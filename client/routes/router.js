@@ -27,7 +27,7 @@ Router.route('/:blog', {
     let blogOwner = Meteor.users.findOne({username: blog});
     if (blogOwner) {
       console.log(blogOwner,'tester')
-      this.render('blog',{
+      this.render('blogWrapper',{
         data: {
           blogOwner: blogOwner.username,
           posts: function(){
