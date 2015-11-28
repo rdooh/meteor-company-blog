@@ -46,9 +46,10 @@
                   
               .editing-tools.pull-right
                 if ownPost
-                  button#editPost.btn.btn-primary(type='button')
-                    i.fa.fa-file
-                    |  Edit Post
+                  a(href='/edit/{{post._id}}')
+                    button#editPost.btn.btn-primary(type='button')
+                      i.fa.fa-file
+                      |  Edit Post
                 if ownPost
                   button#deletePost.btn.btn-warning(type='button')
                     i.fa.fa-file

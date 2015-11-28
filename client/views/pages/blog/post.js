@@ -9,7 +9,6 @@ if (Meteor.isClient) {
 
   Template.post.events({
     'click #deletePost': function() {
-      console.log('press delete');
       Meteor.call('deletePost', this.post._id, function(error, result) {
         // display the error to the user and abort
         if (error)

@@ -3,8 +3,10 @@ if (Meteor.isClient) {
   Meteor.subscribe('allposts'); // this is already done - look into refactor
 
   Template.editPost.helpers({
-    // inputTitle: function () { return Session.get('inputTitle'); },
-    postSlugPreview: function () { return Session.get('postSlugPreview'); }
+    postSlugPreview: function () { return Session.get('postSlugPreview'); },
+    blogOwner: function() {
+      return Meteor.user().username;
+    }
   });
 
 
@@ -15,6 +17,7 @@ if (Meteor.isClient) {
       Session.set('postSlugPreview',postSlugPreview);
     },
     'click #submitEditedPost': function(e, t) {
+      console.log('pressed submit edit');
       // if(Meteor.user()){
       //   let username = Meteor.user().username;
       //   // target form for data

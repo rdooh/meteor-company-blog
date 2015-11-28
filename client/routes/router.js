@@ -42,9 +42,9 @@ Router.route('/edit/:id', {
   action: function () {
     this.render('editPost',{
       data: function() {
-        let blogOwner = Meteor.user();
-        if (blogOwner) {
-          return blogOwner;
+        let post = Posts.findOne(this.params.id);
+        if (post) {
+          return post;
         }
       }
     });

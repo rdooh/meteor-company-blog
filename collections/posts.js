@@ -94,7 +94,6 @@ Meteor.methods({
   deletePost: function(postId) {
     check(Meteor.userId(), String);
     check(postId, String);
-
     let post = Posts.findOne(postId);
     if(post){
       if(post.ownerId === Meteor.userId()) {
