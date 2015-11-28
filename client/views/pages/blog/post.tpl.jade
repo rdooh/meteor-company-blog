@@ -33,9 +33,16 @@
           .text-center.article-title
             span.text-muted
               i.fa.fa-clock-o
-              |  #{post.updatedAt}
-              if ownPost
-                button Edit post
+                if post.updatedAt
+                  | Last Updated: #{post.updatedAt}
+                else
+                  | Created On #{post.createdAt}
+                  
+              .editing-tools
+                if ownBlog
+                  button#edit-post.btn.btn-primary.pull-right(type='button')
+                    i.fa.fa-file
+                    |  Edit Post
           |  #{post.content}
           p
             | Many desktop publishing packages and web page editors now use 

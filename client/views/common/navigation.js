@@ -13,6 +13,11 @@ if (Meteor.isClient) {
       if(bloggers) {
         return bloggers;
       }
+    },
+    isCurrentUserName: function(username) {
+      if (Meteor.user()) {
+        return username === Meteor.user().username;
+      }
     }
   });
 }

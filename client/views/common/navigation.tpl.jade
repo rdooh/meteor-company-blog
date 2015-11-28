@@ -22,4 +22,7 @@ nav.navbar-default.navbar-static-side(role='navigation')
           a(href="/{{username}}")
             i.fa.fa-user
             span.nav-label #{username}
+            if username
+              if isCurrentUserName username
+                i.fa.fa-star
         
