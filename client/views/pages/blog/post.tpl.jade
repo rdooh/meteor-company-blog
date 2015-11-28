@@ -1,4 +1,14 @@
-+pageHeading title='Post'
+.row.wrapper.border-bottom.white-bg.page-heading
+  .col-lg-12
+    h2 #{blogOwner.username}'s Blog
+    ol.breadcrumb
+      li
+        | Company, Inc. Blog
+      li.active
+        strong #{blogOwner.username}
+      li.active
+        strong #{post.title}
+
 .wrapper.wrapper-content.animated.fadeInRight
   .row
     .col-lg-12

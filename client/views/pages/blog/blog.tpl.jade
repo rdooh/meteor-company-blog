@@ -1,9 +1,26 @@
-h2 #{username}'s Blog
-
-.editing-tools
-  if ownBlog
-    button#create-new-post Create Post
-
-p This will have a list of posts:
-
-+posts
+.row.wrapper.border-bottom.white-bg.page-heading
+  .col-lg-12
+    h2 #{blogName}
+    ol.breadcrumb
+      li
+        | Company, Inc. Blog
+      li.active
+        strong {{username}}
+.wrapper.wrapper-content.animated.fadeInRight
+  .row
+    .col-lg-12
+      .text-center.m-t-lg
+        h1
+          | #{blogName}
+        small Check it out
+        hr
+    .row
+      .col-lg-12   
+        .ibox.float-e-margins
+          .ibox-title
+            | Recent Posts
+            .editing-tools
+              if ownBlog
+                button#create-new-post Create Post
+          .ibox-content
+            +posts
