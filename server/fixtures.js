@@ -1,48 +1,42 @@
 
 Meteor.startup(function(){
-  if (Meteor.users.find().count() === 0) {
 
+  // Set up Initial Users
+  if (Meteor.users.find().count() === 0) {
+    // Set User 1
     let rob = Meteor.users.insert({
       username: 'robdooh',
       _id: 'asdfasdfasdfads'
     });
     Accounts.setPassword(rob, 'rob');
-    Accounts.addEmail(rob, 'robdooh@company.com', true)
-    // console.log('rob',Meteor.users.findOne(rob));
-
-
-    let joe = Accounts.createUser({
+    Accounts.addEmail(rob, 'robdooh@company.com', true);
+    // Set User 2
+    let joe = Meteor.users.insert({
       username: 'joecamel',
       _id: 'jgjgjhgjhghgkjh'
     });
     Accounts.setPassword(joe, 'joe');
-    Accounts.addEmail(joe, 'joecamel@company.com', true)
-    // console.log('joe',Meteor.users.findOne(joe));
-
+    Accounts.addEmail(joe, 'joecamel@company.com', true);
   }
 
-
-
+  // Set up Initial Posts
   if (Posts.find().count() === 0) {
     Posts.insert({
       "title": 'Why I Love Meteor',
+      "slug": 'why-i-love-meteor',
       "description": 'This is a cool blog post',
-      createdAt: ( new Date(2015, 3, 14 ).getTime() / 1000 ),
-      updatedAt: ( new Date(2015, 5, 18 ).getTime() / 1000 ),
       "ownerId": 'asdfasdfasdfads'
     });
     Posts.insert({
       "title": 'Super Post',
+      "slug": 'super-post',
       "description": 'This is another cool blog post',
-      createdAt: ( new Date(2015, 3, 15 ).getTime() / 1000 ),
-      updatedAt: ( new Date(2015, 5, 17 ).getTime() / 1000 ),
       "ownerId": 'asdfasdfasdfads'
     });
     Posts.insert({
       "title": 'Building a Blog',
+      "slug": 'building-a-blog',
       "description": 'The story of this blog',
-      createdAt: ( new Date(2015, 4, 14 ).getTime() / 1000 ),
-      updatedAt: ( new Date(2015, 6, 18 ).getTime() / 1000 ),
       "ownerId": 'jgjgjhgjhghgkjh'
     });
   }
