@@ -27,11 +27,17 @@ when logged in, you may have some extra buttons on the top bar
   - [x] augment user
   - [x] set up some basic tests
   - [x] set up some seed data
-- [ ] set up simple pages for testing output to screen
-  - [ ] set up some basic e2e tests
-  - [ ] plan the page templates - simple
+- [x] set up simple pages for testing output to screen
+  - [x] set up some basic e2e tests
+  - [x] plan the page templates - simple
 - [ ] set up schemas
-  - tests?
+  - [ ] clean up some tests
+  - [ ] work on fixtures
+  - [ ] work on schemas
+- [ ] Improve Read
+  - [ ] templates to better reflect data
+  - [ ] routes logic improvements
+  - [ ] transfer to subscriptions
 - [ ] recast collection documents as domain object class instances (try es2015)
   - tests?
 - [ ] set up basic CRUD operations, attached to the domain objects
