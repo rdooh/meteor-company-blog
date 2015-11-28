@@ -1,0 +1,26 @@
+.row.wrapper.border-bottom.white-bg.page-heading
+  .col-lg-12
+    h2 #{username}'s Blog
+    ol.breadcrumb
+      li
+        | Company, Inc. Blog
+      li.active
+        strong #{username}
+
+.wrapper.wrapper-content.animated.fadeInRight
+  .row
+    .col-lg-12
+      .text-center.m-t-lg
+        h1
+          | Create Post
+        h3 By 
+          a(href='/{{username}}') #{username}
+        small
+          | Fill out the form and create a new post
+        hr    
+
+  .row
+    .col-lg-10.col-lg-offset-1
+      .ibox
+        .ibox-content
+        

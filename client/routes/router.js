@@ -19,6 +19,23 @@ Router.route('/', {
 });
 
 
+// Default home route
+Router.route('/create', {
+  name: 'create',
+  action: function () {
+    this.render('createPost',{
+      data: function() {
+        let blogOwner = Meteor.user();
+        if (blogOwner) {
+          return blogOwner;
+        }
+      }
+    });
+  }
+});
+
+
+
 // Reusable base controller
 BlogController = RouteController.extend({
   subscriptions: function() {

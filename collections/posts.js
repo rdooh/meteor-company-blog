@@ -70,8 +70,8 @@ if(Meteor.isClient){
   // Allow
   Posts.allow({
     insert: function(){
-      // Disallow inserts on the client by default.
-      return false;
+      // allow if anyone logged in
+      return !! Meteor.userId();
     },
     update: function(){
       // Disallow updates on the client by default.
