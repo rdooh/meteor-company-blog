@@ -16,7 +16,6 @@ if (Meteor.isClient) {
     },
     'click #submitNewPost': function(e, t) {
       if(Meteor.user()){
-        let ownerId = Meteor.userId();
         let username = Meteor.user().username;
         // target form for data
         let title = t.find('#title').value;
@@ -24,20 +23,20 @@ if (Meteor.isClient) {
         let description = t.find('#description').value;
         let content = t.find('#content').value;
         if (title !== '') {
-          // as long as there's a title, insert
-          let postResult = Posts.insert({
+          let postData = {
             'title': title,
             'slug': slug,
             'description': description,
-            'content': content,
-            'ownerId': ownerId
+            'content': content
+          }
+          Meteor.call('createPost', postData, function(error, result) {
+            // display the error to the user and abort
+            if (error)
+              return alert(error.reason);
+            Router.go('/'+username+'/'+slug);
           });
-
         }
-        return Router.go('/'+username+'/'+slug);
-      }
+      };
     }
-
-
   });
 }

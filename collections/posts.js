@@ -99,3 +99,23 @@ if(Meteor.isClient){
     }
   });
 }
+
+
+Meteor.methods({
+  createPost: function(postAttributes) {
+    check(Meteor.userId(), String);
+    check(postAttributes, {
+      title: String,
+      slug: String,
+      description: String,
+      content: String
+    });
+    let post = _.extend(postAttributes, {
+      ownerId: Meteor.userId()
+    });
+    var postId = Posts.insert(post);
+    return {
+      _id: postId
+    };
+  }
+});
