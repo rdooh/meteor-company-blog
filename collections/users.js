@@ -2,8 +2,7 @@
 UsersSchema = new SimpleSchema({
   username: {
     type: String,
-    regEx: /^[a-z0-9A-Z_]{3,15}$/,
-    optional: true
+    regEx: /^[a-z0-9A-Z_]{3,15}$/
   },
   emails: {
     type: [Object],
@@ -20,7 +19,15 @@ UsersSchema = new SimpleSchema({
   },
   createdAt: {
     type: Date,
-    optional: true
+    autoValue: function() {
+      if (this.isInsert) {
+        return new Date;
+      } else if (this.isUpsert) {
+        return {$setOnInsert: new Date};
+      } else {
+        this.unset();  // Prevent user from supplying their own value
+      }
+    }
   },
   services: {
     type: Object,

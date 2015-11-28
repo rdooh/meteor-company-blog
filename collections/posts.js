@@ -2,10 +2,6 @@ Post = class Post {
   constructor (doc) {
     _.extend(this, doc);
   }
-  datestamp() {
-    let date = new Date();
-    return moment(date).format('YYYY-MM-DD');
-  }
 }
 
 
@@ -15,12 +11,16 @@ Posts = new Meteor.Collection('posts', {
     return newPost;
   }
 });
-// Probably force to server methods for interactions
+
 
 PostsSchema = new SimpleSchema({
   "title": {
     type: String,
     label: "Title"
+  },
+  "slug": {
+    type: String,
+    label: "Slug"
   },
   "description": {
     type: String,
@@ -28,11 +28,27 @@ PostsSchema = new SimpleSchema({
   },
   createdAt: {
     type: Date,
-    label: "Creation Date"
+    label: "Creation Date",
+    autoValue: function() {
+      if (this.isInsert) {
+        return new Date;
+      } else if (this.isUpsert) {
+        return {$setOnInsert: new Date};
+      } else {
+        this.unset();  // Prevent user from supplying their own value
+      }
+    }
   },
   updatedAt: {
     type: Date,
-    label: "Last Updated"
+    label: "Last Updated",
+    autoValue: function() {
+      if (this.isUpdate) {
+        return new Date();
+      }
+    },
+    denyInsert: true,
+    optional: true
   },
   "ownerId": {
     type: String,
@@ -42,6 +58,10 @@ PostsSchema = new SimpleSchema({
 
 Posts.attachSchema( PostsSchema, {transform: true} );
 
+
+
+
+// TODO: for CUD, force to server methods for interactions
 if(Meteor.isClient){
   // Allow
   Posts.allow({
